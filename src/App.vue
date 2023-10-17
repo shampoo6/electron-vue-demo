@@ -1,4 +1,5 @@
 <template>
+  <button @click="checkUpdate">检查更新</button>
   <div class="container">
     <!-- 工具栏 -->
     <div class="toolbar">
@@ -12,10 +13,10 @@
     <!-- 显示屏 -->
     <div class="monitor">
       <div class="display">
-        {{calc.display}}
+        {{ calc.display }}
       </div>
       <div class="current-number">
-        {{calc.displayCurrentNum}}
+        {{ calc.displayCurrentNum }}
       </div>
     </div>
     <!-- 函数按钮 -->
@@ -44,6 +45,17 @@ import {Calc} from "@/assets/Calc";
 
 export default {
   name: 'App',
+  created() {
+    onCheckUpdateInfo(info => {
+      console.log('收到检查更新信息')
+      console.log(info)
+    })
+  },
+  methods: {
+    checkUpdate(){
+      electronAPI.checkForUpdate()
+    }
+  },
   data() {
     return {
       calc: new Calc(),

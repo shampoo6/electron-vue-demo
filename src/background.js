@@ -132,6 +132,11 @@ app.on('ready', async () => {
         else
             BrowserWindow.getAllWindows()[0].show()
     })
+
+    BrowserWindow.getAllWindows()[0].webContents.send('')
+
+    // 自动更新
+    import('./autoUpdater.js')
 })
 
 // Exit cleanly on request from parent process in development mode.

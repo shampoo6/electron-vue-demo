@@ -14,6 +14,14 @@ module.exports = defineConfig({
         extraResources: [
           'build',
           'images'
+        ],
+        // 发布选项，用于自动更新
+        publish: [
+          {
+            provider: "github",
+            owner: "shampoo6",
+            repo: "electron-vue-demo"
+          }
         ]
       }
     }
