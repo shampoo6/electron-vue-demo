@@ -47,7 +47,7 @@ export default {
   name: 'App',
   created() {
     onCheckUpdateInfo(info => {
-      console.log('收到检查更新信息')
+      // console.log('收到检查更新信息')
       console.log(info)
     })
   },
